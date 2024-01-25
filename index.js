@@ -1,11 +1,17 @@
-calc = {
-read = () => {
-this.a = 1
-this.b = 2
-}
+import readlineSync from 'readline-sync';
 
-sum = (a, b) => a + b;
-mult = (a, b) => a * b;
-}
+const calc = {
+  read() {
+    this.a = Number(readlineSync.question('May I have your a? '));
+    this.b = Number(readlineSync.question('May I have your b? '));
+  },
+
+  sum() {
+    return this.a + this.b;
+  },
+  mult() {
+    return this.a * this.b;
+  },
+};
 
 export default calc;
